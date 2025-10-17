@@ -17,7 +17,6 @@ test.describe('Product Selection & Cart Addition Tests', () => {
     await loginPage.navigateTo(testData.urls.baseUrl);
     await loginPage.login(testData.standardUser.username, testData.standardUser.password);
     
-    // Wait for products page to load
     await page.waitForLoadState('networkidle');
     await expect(page.locator('[data-test="title"]')).toHaveText('Products');
   });

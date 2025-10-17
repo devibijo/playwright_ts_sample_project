@@ -21,7 +21,8 @@ test.describe('Product Selection & Cart Addition Tests', () => {
     await expect(page.locator('[data-test="title"]')).toHaveText('Products');
   });
 
-  test('should check title after login', async ({ page }) => {
+  test('should check the URL & Title after login', async ({ page }) => {
+    await loginPage.verifyPageUrl(testData.urls.productUrl);
     await expect(page).toHaveTitle('Swag Labs');
   });
 
